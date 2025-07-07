@@ -1,0 +1,150 @@
+:root {
+    --chimpcss-font-family: serif;
+    --chimpcss-font-size: 12pt;
+    --chimpcss-letter-spacing: 0.12;
+    --chimpcss-line-height: 1.5;
+    --chimpcss-word-spacing: 0.16;
+}
+
+html {
+    box-sizing: border-box;
+    font-family: var(--chimpcss-font-family);
+    font-size: var(--chimpcss-font-size);
+    letter-spacing: var(--chimpcss-letter-spacing);
+    line-height: var(--chimpcss-line-height);
+    word-spacing: var(--chimpcss-word-spacing);
+}
+
+*, *::after, *::before {
+    box-sizing: inherit;
+    margin-block: 0;
+    margin-inline: 0;
+    overflow-wrap: break-word;
+}
+
+p {
+    margin-block: 1ch;
+    margin-inline: 0;
+    text-align: justify;
+    text-wrap: pretty;
+}
+
+blockquote {
+    margin-block: 2ch;
+    margin-inline: 4ch;
+    padding-inline-start: 1ch;
+    text-align: justify;
+    text-wrap: pretty;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-align: left;
+    text-wrap: balance;
+}
+
+h6 { font-size: calc(1.15 * var(--chimpcss-font-size)); }
+h5 { font-size: calc(1.30 * var(--chimpcss-font-size)); }
+h4 { font-size: calc(1.45 * var(--chimpcss-font-size)); }
+h3 { font-size: calc(1.60 * var(--chimpcss-font-size)); }
+h2 { font-size: calc(1.75 * var(--chimpcss-font-size)); }
+h1 { font-size: calc(2.00 * var(--chimpcss-font-size)); }
+
+code, kbd {
+    background-color: #EEE;
+    font-family: monospace;
+    font-size: calc(0.90 * var(--chimpcss-font-size));
+    padding-block: 0;
+    padding-inline: 0.5ch;
+}
+
+kbd {
+    margin-block: 0;
+    margin-inline: 0.25ch;
+    outline: 1px solid #b4b4b4;
+}
+
+pre {
+    font-size: var(--chimpcss-font-size);
+    margin-block: 2ch;
+
+    code {
+        display: block;
+    }
+}
+
+sub, sup {
+    font-size: smaller;
+    margin-inline-end: 0.15ch;
+}
+
+span {
+    font: inherit;
+}
+
+button, input, select, textarea {
+    font: inherit;
+    letter-spacing: var(--chimpcss-letter-spacing);
+    line-height: var(--chimpcss-line-height);
+    word-spacing: var(--chimpcss-word-spacing);
+}
+
+img, video {
+    display: block;
+    height: auto;
+    margin-block: 2ch;
+    margin-inline: auto;
+    max-width: 100%;
+}
+
+figure {
+    margin-block: 2ch;
+    margin-inline: 0;
+
+    img, video {
+        margin-block: 0;
+    }
+
+    figcaption {
+        margin-block-start: 1ch;
+        text-align: center;
+    }
+}
+
+a:link {
+    text-underline-offset: 0.5ch;
+}
+
+ol, ul {
+    margin-block: 1ch;
+    margin-inline: 0;
+    padding-inline-start: 4ch;
+}
+
+li > ol,
+li > ul {
+    margin-block: 0;
+    padding-inline-start: 3ch;
+}
+
+fieldset {
+    margin-block: 2ch;
+    margin-inline: 0;
+    padding-block: 0;
+    padding-inline: 2ch;
+
+    legend {
+        padding-inline: 0.5ch;
+    }
+}
+
+table {
+    border-collapse: collapse;
+    margin-block: 2ch;
+    margin-inline: 0;
+    table-layout: fixed;
+    width: 100%;
+
+    th, td {
+        text-align: center;
+    }
+}

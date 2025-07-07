@@ -1,0 +1,99 @@
+:root {
+    --chimpcss-heading-number-delimiter: ".";
+    --chimpcss-heading-number-prefix: "";
+    --chimpcss-heading-number-suffix: " ";
+}
+
+body {
+    counter-reset: counter-h1;
+}
+
+h1 {
+    counter-increment: counter-h1;
+    counter-reset: counter-h2;
+
+    &::before {
+        content:
+            var(--chimpcss-heading-number-prefix)
+            counter(counter-h1) var(--chimpcss-heading-number-suffix);
+    }
+}
+
+h2 {
+    counter-increment: counter-h2;
+    counter-reset: counter-h3;
+
+    &::before {
+        content:
+            var(--chimpcss-heading-number-prefix)
+            counter(counter-h1) var(--chimpcss-heading-number-delimiter)
+            counter(counter-h2) var(--chimpcss-heading-number-suffix);
+    }
+}
+
+h3 {
+    counter-increment: counter-h3;
+    counter-reset: counter-h4;
+
+    &::before {
+        content:
+            var(--chimpcss-heading-number-prefix)
+            counter(counter-h1) var(--chimpcss-heading-number-delimiter)
+            counter(counter-h2) var(--chimpcss-heading-number-delimiter)
+            counter(counter-h3) var(--chimpcss-heading-number-suffix);
+    }
+}
+
+h4 {
+    counter-increment: counter-h4;
+    counter-reset: counter-h5;
+
+    &::before {
+        content:
+            var(--chimpcss-heading-number-prefix)
+            counter(counter-h1) var(--chimpcss-heading-number-delimiter)
+            counter(counter-h2) var(--chimpcss-heading-number-delimiter)
+            counter(counter-h3) var(--chimpcss-heading-number-delimiter)
+            counter(counter-h4) var(--chimpcss-heading-number-suffix);
+    }
+}
+
+h5 {
+    counter-increment: counter-h5;
+    counter-reset: counter-h6;
+
+    &::before {
+        content:
+            var(--chimpcss-heading-number-prefix)
+            counter(counter-h1) var(--chimpcss-heading-number-delimiter)
+            counter(counter-h2) var(--chimpcss-heading-number-delimiter)
+            counter(counter-h3) var(--chimpcss-heading-number-delimiter)
+            counter(counter-h4) var(--chimpcss-heading-number-delimiter)
+            counter(counter-h5) var(--chimpcss-heading-number-suffix);
+    }
+}
+
+h6 {
+    counter-increment: counter-h6;
+
+    &::before {
+        content:
+            var(--chimpcss-heading-number-prefix)
+            counter(counter-h1) var(--chimpcss-heading-number-delimiter)
+            counter(counter-h2) var(--chimpcss-heading-number-delimiter)
+            counter(counter-h3) var(--chimpcss-heading-number-delimiter)
+            counter(counter-h4) var(--chimpcss-heading-number-delimiter)
+            counter(counter-h5) var(--chimpcss-heading-number-delimiter)
+            counter(counter-h6) var(--chimpcss-heading-number-suffix);
+    }
+}
+
+ol {
+    counter-reset: counter-ol;
+    list-style-type: none;
+
+    li::before {
+        counter-increment: counter-ol;
+        content: counters(counter-ol, var(--chimpcss-heading-number-delimiter)) var(--chimpcss-heading-number-suffix);
+    }
+}
